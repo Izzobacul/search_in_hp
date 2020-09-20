@@ -1,4 +1,6 @@
 body{
     background-image: url("bg.jpg");
     background-repeat: no-repeat;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(156, 156, 156);
 }
