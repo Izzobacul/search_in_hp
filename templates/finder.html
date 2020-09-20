@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find in Harry Potter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Enter the word you are looking for: </h1>
+    <form method="POST">
+        <select name="lang" id="lang">
+            <option value="en" selected>English</option>
+            <option value="es">Español</option>
+        </select>
+        <input name="text">
+        <select name="books" id="books">
+            <option value=0>1</option>
+            <option value=1>2</option>
+            <option value=2>3</option>
+            <option value=3>4</option>
+            <option value=4>5</option>
+            <option value=5>6</option>
+            <option value=6>7</option>
+            <option value=7 selected>All</option>
+        </select>
+        <input type="submit">
+    </form>
+    {% if query %}
+    {% if lang == 'en' %}
+    <h1>"{{ query }}" is {{ result }} times in {{ book }}</h1>
+    {% elif lang == 'es' %}
+    <h1>"{{ query }}" está {{ result }} veces en {{ book }}</h1>
+    {% endif %}
+    {% endif %}
+</body>
+</html>
